@@ -176,8 +176,5 @@ def main():
         else:
             print("Invalid choice. Please select 1-5.")
 
-    # add_server(servers)
-    # display_all_servers(servers)
-
 
 main()
