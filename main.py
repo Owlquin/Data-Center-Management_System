@@ -1,9 +1,17 @@
+
 # Data Center Management System
-# App will keep track of maintaining a data center with a few servers
-# including server inventory, server status management, maintenance records, IT support tickets
+# This application manages server inventory, server status,
+# data center racks, maintenance records, and support tickets.
+
+# Import required classes and functions
 from Server import Server
+from Rack import *
+from Statistics import display_statistics
+from Maintenance import *
+from Ticket import *
 
 
+# Display server information
 def display_server_info(server):
     print("Server Information")
     print("------------------------")
@@ -16,11 +24,13 @@ def display_server_info(server):
     print(f"Status: {server.get_status()}")
 
 
+# Display all servers
 def display_all_servers(servers):
     for server in servers:
         display_server_info(server)
 
 
+# Search for a server
 def search_server(servers, hostname):
     for server in servers:
         if server.get_host_name() == hostname:
@@ -29,6 +39,7 @@ def search_server(servers, hostname):
     return False
 
 
+# Update server status
 def update_server_status(servers, hostname, new_status):
     for server in servers:
         if server.get_host_name() == hostname:
@@ -37,6 +48,7 @@ def update_server_status(servers, hostname, new_status):
             break
 
 
+# Add a new server
 def add_server(servers):
     new_server = input("Would you like to create a new server? (y/n): ")
     if new_server == 'y':
@@ -63,6 +75,7 @@ def add_server(servers):
         print("Returning to the main menu")
 
 
+# Delete a server
 def delete_server(servers):
     while True:
         hostname = input("Enter hostname of server to delete: ")
@@ -98,16 +111,25 @@ def delete_server(servers):
                 break
 
 
+# Main application
 def main():
+
+    # Initialize servers
     server1 = Server("web-server-01", "Ubuntu", 8, 32, 500, "Online")
     server2 = Server("web-server-02", "Ubuntu", 8, 64, 1000, "Online")
     server3 = Server("web-server-03", "Ubuntu", 16, 32, 750, "Online")
 
+    # Initialize application data
     servers = []
     servers.append(server1)
     servers.append(server2)
     servers.append(server3)
 
+    maintenance_records = []
+    racks = initialize_racks(servers)
+    tickets = []
+
+    # Main menu
     while True:
         print("================================")
         print(" Data Center Management System")
@@ -118,12 +140,28 @@ def main():
         print("3. Update server status")
         print("4. Add a new server")
         print("5. Delete a server")
-        print("6. Exit")
-        choice = input("Enter your choice (1-6): ")
-        print(f"You selected option: {choice}")
+        print("6. Display data center racks")
+        print("7. Search for server rack location")
+        print("8. Display Data Center Statistics")
+        print("9. Add Maintenance Record")
+        print("10. Display Maintenance Records")
+        print("11. Search Maintenance Records")
+        print("12. Create Support Ticket")
+        print("13. Display Support Tickets")
+        print("14. Search Support Tickets")
+        print("15. Update Ticket Status")
+
+        # Exit option
+        print("16. Exit")
+
+        # Process user selection
+        choice = input("Enter your choice (1-16): ").strip()
+
+        # Display all servers
         if choice == '1':
             display_all_servers(servers)
 
+        # Search for a server
         elif choice == '2':
             hostname = input("Enter hostname: ")
             while True:
@@ -146,6 +184,7 @@ def main():
                         break
                     hostname = input("Enter hostname: ")
 
+        # Update server status
         elif choice == '3':
             hostname = input("Enter hostname: ")
             while not search_server(servers, hostname):
@@ -163,18 +202,74 @@ def main():
                 new_status = input("Enter new server status: ")
                 update_server_status(servers, hostname, new_status)
 
+        # Add a new server
         elif choice == '4':
             add_server(servers)
 
+        # Delete a server
         elif choice == '5':
             delete_server(servers)
 
+        # Display data center racks
         elif choice == '6':
+            display_racks(racks)
+            input("\nPress Enter to return to the main menu...")
+
+        # Search rack location
+        elif choice == '7':
+            hostname = input("Enter hostname: ")
+            search_rack_location(racks, hostname)
+            input("\nPress Enter to return to the main menu...")
+
+        # Display data center statistics
+        elif choice == '8':
+            display_statistics(servers)
+            input("\nPress Enter to return to the main menu...")
+
+        # Add maintenance record
+        elif choice == '9':
+            add_maintenance_record(servers, maintenance_records)
+            # input("\nPress Enter to return to the main menu...")
+
+        # Display maintenance records
+        elif choice == '10':
+            display_maintenance_records(maintenance_records)
+            input("\nPress Enter to return to the main menu...")
+
+        # Search maintenance records
+        elif choice == '11':
+            search_maintenance_records(servers, maintenance_records)
+            input("\nPress Enter to return to the main menu...")
+
+        # Create support ticket
+        elif choice == '12':
+            create_ticket(servers, tickets)
+            input("\nPress Enter to return to the main menu...")
+
+        # Display support tickets
+        elif choice == '13':
+            display_tickets(tickets)
+            input("\nPress Enter to return to the main menu...")
+
+        # Search support tickets
+        elif choice == '14':
+            search_tickets(servers, tickets)
+            input("\nPress Enter to return to the main menu...")
+
+        # Update ticket status
+        elif choice == '15':
+            update_ticket_status(tickets)
+            input("\nPress Enter to return to the main menu...")
+
+        # Exit application
+        elif choice == '16':
             print("Exiting Data Center Management System")
             break
 
+        # Handle invalid selections
         else:
-            print("Invalid choice. Please select 1-5.")
+            print("Invalid choice. Please select 1-16.")
 
 
+# Run the application
 main()
