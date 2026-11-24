@@ -1,34 +1,63 @@
 # 🖥️ Data Center Management System
 
-A Python-based application for managing data center operations, including server inventory, rack organization, maintenance records, and IT support tickets.
+<div align="center">
 
-Built as a hands-on project to practice Python programming, object-oriented programming, and infrastructure management concepts.
+**A Python-based application for simulating data center operations**
+
+Managing server inventory, rack organization, maintenance records, and IT support tickets.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
-![Status](https://img.shields.io/badge/Project-Completed-success)
+![Project](https://img.shields.io/badge/Project-Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Features](#-features)
+- [Technologies Used](#-technologies-used)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Application Menu](#-application-menu)
+- [What I Learned](#-what-i-learned)
+- [Future Improvements](#-future-improvements)
+- [Notes](#-notes)
 
 ---
 
 ## 📌 Overview
 
-The Data Center Management System is a command-line application that simulates basic data center operations.
+The **Data Center Management System** is a command-line application designed to simulate basic data center operations.
 
 Users can manage server inventory, organize servers into rack positions, monitor hardware statistics, document maintenance activities, and track IT support tickets.
+
+This project was built as a hands-on opportunity to practice Python programming, object-oriented programming, and infrastructure management concepts.
+
+---
 
 ## ✨ Features
 
 | Feature | Description |
-|---|---|
-| 🖥️ Server Inventory | Add, delete, search, display, and update server information |
-| 🗄️ Rack Management | Organize servers into racks and search for their physical positions |
-| 📊 Data Center Statistics | Track server status, CPU cores, RAM, and storage |
-| 🔧 Maintenance Records | Create, display, and search server maintenance records |
-| 🎫 Support Tickets | Create, search, display, and update support ticket statuses |
+|:---|:---|
+| 🖥️ **Server Inventory** | Add, delete, search, display, and update server information. |
+| 🗄️ **Rack Management** | Organize servers into racks and search for their physical positions. |
+| 📊 **Data Center Statistics** | Track server status, CPU cores, RAM, and storage. |
+| 🔧 **Maintenance Records** | Create, display, and search server maintenance records. |
+| 🎫 **Support Tickets** | Create, search, display, and update support ticket statuses. |
+
+---
 
 ## 🛠️ Technologies Used
 
-- **Python 3**
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+
+</p>
+
 - Object-Oriented Programming (OOP)
 - Classes and Objects
 - Lists and Dictionaries
@@ -36,31 +65,37 @@ Users can manage server inventory, organize servers into rack positions, monitor
 - Functions and Modules
 - Loops and Conditional Statements
 
+---
+
 ## 📂 Project Structure
 
 ```text
 DataCenterManagementSystem/
 │
 ├── main.py          # Main application and menu
-├── Server.py        # Server class and attributes
-├── Rack.py          # Rack organization and management
-├── Statistics.py    # Data center statistics
-├── Maintenance.py   # Maintenance record management
-└── Ticket.py        # IT support ticket management
+├── Server.py       # Server class and attributes
+├── Rack.py         # Rack organization and management
+├── Statistics.py   # Data center statistics
+├── Maintenance.py  # Maintenance record management
+├── Ticket.py       # IT support ticket management
+│
+└── README.md
 ```
+
+---
 
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Owlquin/Data-Center-Management_System.git
 ```
 
 ### 2. Navigate to the project directory
 
 ```bash
-cd DataCenterManagementSystem
+cd Data-Center-Management_System
 ```
 
 ### 3. Run the application
@@ -68,6 +103,8 @@ cd DataCenterManagementSystem
 ```bash
 python3 main.py
 ```
+
+---
 
 ## 💻 Application Menu
 
@@ -83,6 +120,8 @@ The application provides a menu-driven interface for accessing its features:
 - Add and search maintenance records
 - Create and manage IT support tickets
 
+---
+
 ## 📚 What I Learned
 
 Through this project, I practiced:
@@ -94,6 +133,8 @@ Through this project, I practiced:
 - Building menu-driven applications.
 - Managing server inventory and simulating common data center operations.
 
+---
+
 ## 🔮 Future Improvements
 
 - Add persistent data storage using SQLite.
@@ -102,12 +143,16 @@ Through this project, I practiced:
 - Develop a graphical user interface.
 - Expand server monitoring capabilities.
 
+---
+
 ## 📝 Notes
 
 This project currently stores application data in memory. Server inventory, maintenance records, and support tickets are not saved after the application exits.
 
 ---
 
-**Author:** Alquin
+<div align="center">
 
+**Developed by Alquin**
 
+</div>
