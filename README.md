@@ -50,6 +50,19 @@ This project was built as a hands-on opportunity to practice Python programming,
 
 ---
 
+## 📸 Application Preview
+
+### Main Menu
+![Main Menu](screenshots/main-menu.png)
+
+### Server Inventory
+![Server Inventory](screenshots/server-inventory.png)
+
+### Data Center Statistics
+![Statistics](screenshots/statistics.png)
+
+---
+
 ## 🛠️ Technologies Used
 
 <p align="center">
