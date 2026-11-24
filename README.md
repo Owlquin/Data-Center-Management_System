@@ -59,7 +59,7 @@ This project was built as a hands-on opportunity to practice Python programming,
 ![Server Inventory](screenshots/server-inventory.png)
 
 ### Data Center Statistics
-![Statistics](screenshots/statistics.png)
+![Statistics](screenshots/server-statistics.png)
 
 ---
 
